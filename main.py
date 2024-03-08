@@ -2,8 +2,8 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 # получение роутеров
-from users.handlers import user_commands
-from admins.handlers import admin_commands
+from users.routers import *
+from admins.routers import *
 
 from config_reader import config
 
@@ -15,7 +15,9 @@ async def main():
     bot = Bot(config.bot_token.get_secret_value())
     dp.include_routers(
         user_commands.router,
-        admin_commands.router
+        admin_commands.router,
+        before_registration.router,
+        admins_menu.router
         # bot_messages.router # идет последним, так как обрабатывает все остальные сообщения
     )
     await bot.delete_webhook(drop_pending_updates=True)
