@@ -28,6 +28,8 @@ async def start_bot(message: Message):
         await message.answer(
             f"Привет, {message.from_user.first_name}, group.\n\n"
             f"Вы пока ничего делать не можете, но скоро сможете"
+            f"Внутри кода нужно поменять id чата администраторов"
+            f"В данный момент он равен {message.chat.id}"
         )
 
 

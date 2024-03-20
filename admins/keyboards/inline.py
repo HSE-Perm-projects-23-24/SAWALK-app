@@ -28,7 +28,7 @@ variants_main_admins_menu = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Настройки⚙️",
-                callback_data="other_texts_admins_menu"
+                callback_data="settings_admins_menu"
             )
         ]
     ]
@@ -57,9 +57,37 @@ variants_tasks_admins_menu = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Назад⬅️",
-                callback_data="from_var_tasks_menu_to_admins_mm"
+                callback_data="to_admins_mm"
             )
         ]
     ]
 )
 
+variants_changes_main_tasks_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Текст",
+                callback_data="change_text_one_of_main_tasks"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Фото",
+                callback_data="change_photo_one_of_main_tasks"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Баллы",
+                callback_data="change_points_one_of_main_tasks"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Назад⬅️",
+                callback_data="main_tasks_admins_menu"
+            )
+        ]
+    ]
+)
