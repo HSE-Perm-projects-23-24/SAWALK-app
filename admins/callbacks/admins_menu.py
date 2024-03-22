@@ -15,9 +15,9 @@ with open("admins/data_to_delete_by_db/len_main_tasks.txt", 'r') as file:
 
 
 @router.callback_query(lambda callback_query: callback_query.data == "admins_menu")
-async def variants_rules_handler(callback_query: CallbackQuery, bot=Bot):
+async def main_admins_menu_handler(callback_query: CallbackQuery, bot=Bot):
     """
-    Функция-обработчик кнопки стартового сообщения для администраторов
+    Основное меню администраторов
     """
     await bot.edit_message_reply_markup(
         chat_id=callback_query.message.chat.id,
@@ -42,7 +42,7 @@ async def variants_rules_handler(callback_query: CallbackQuery, bot=Bot):
                                "teams_admins_menu",
                                "settings_admins_menu"
                            ])
-async def rules_photos_and_message_handler(callback_query: CallbackQuery, bot=Bot):
+async def variants_main_admins_menu_handler(callback_query: CallbackQuery, bot=Bot):
     """
     Функция-обработчик варианта из основного меню администраторов
     """
@@ -64,8 +64,8 @@ async def rules_photos_and_message_handler(callback_query: CallbackQuery, bot=Bo
     elif callback_query.data == "settings_admins_menu":
         await bot.send_message(
             chat_id=callback_query.message.chat.id,
-            text="Тут будет работа с настройками и другими командами"
-
+            text="Что вы хотели бы изменить",
+            reply_markup=inline.variants_settings_menu
         )
 
 
@@ -78,7 +78,7 @@ async def rules_photos_and_message_handler(callback_query: CallbackQuery, bot=Bo
                            ])
 async def variants_tasks_admins_menu_handler(callback_query: CallbackQuery, bot=Bot):
     """
-    Функция-обработчик кнопок с изменениями различных видов заданий
+    Функция-обработчик различных вариантов из заданий
     """
     await bot.delete_message(
         chat_id=callback_query.message.chat.id,
@@ -112,4 +112,5 @@ async def variants_rules_handler(callback_query: CallbackQuery, bot=Bot):
         text="Основное меню выбора",
         reply_markup=inline.variants_main_admins_menu
     )
+
 

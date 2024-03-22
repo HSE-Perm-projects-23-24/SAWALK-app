@@ -1,1 +1,1 @@
-from . import before_registration
+from . import before_authorization, authorization

@@ -26,3 +26,13 @@ variants_terms_use = InlineKeyboardMarkup(
     ]
 )
 
+to_authorization = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Вход в аккаунт",
+                callback_data="go_to_authorization"
+            )
+        ]
+    ]
+)

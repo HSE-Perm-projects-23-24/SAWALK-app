@@ -30,13 +30,16 @@ async def rules_photos_and_message_handler(callback_query: CallbackQuery, bot=Bo
     """
     Функция, отвечающая на сообщение с выбором варианта представления FAQ
     """
+    with open("admins/data_to_delete_by_db/FAQ_photo.txt", 'r') as file:
+        photo_tg_id = file.read()
     if callback_query.data == "rules_photos":
         await bot.send_photo(
             chat_id=callback_query.message.chat.id,
-            photo="https://avatars.mds.yandex.net/i?id=77e29303d987c2e971077254149ea96c_l-5247794-images-thumbs&n=13",
-            caption="Привет!"
+            photo=photo_tg_id,
+            caption="Привет!",
+            reply_markup=inline.to_authorization
         )
-    else:
+    elif callback_query.data == "rules_message":
         print("присылаем сообщение правил")
 
 

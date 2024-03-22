@@ -14,14 +14,15 @@ async def main():
     dp = Dispatcher()
     bot = Bot(config.bot_token.get_secret_value())
     dp.include_routers(
-        photos.router,
+        admins_photos_handler.router,
         user_commands.router,
-        admin_commands.router,
+        admins_commands.router,
         before_registration.router,
         admins_menu.router,
         tasks_menu.router,
         settings_menu.router,
 
+        admins_text_handler.router
         # bot_messages.router # идет последним, так как обрабатывает все остальные сообщения
     )
     await bot.delete_webhook(drop_pending_updates=True)

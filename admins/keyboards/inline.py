@@ -91,3 +91,72 @@ variants_changes_main_tasks_menu = InlineKeyboardMarkup(
         ]
     ]
 )
+
+variants_settings_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Тексты",
+                callback_data="texts_settings"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Фото",
+                callback_data="photos_settings"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Назад⬅️",
+                callback_data="to_admins_mm"
+            )
+        ]
+    ]
+)
+
+
+texts_settings_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Название мероприятия",
+                callback_data="name_event_settings"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Назад⬅️",
+                callback_data="settings_admins_menu"
+            )
+        ]
+    ]
+)
+
+photos_settings_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Фото FAQ",
+                callback_data="faq_photo_settings"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="Назад⬅️",
+                callback_data="settings_admins_menu"
+            )
+        ]
+    ]
+)
+
+to_settings_admins_menu = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Назад⬅️",
+                callback_data="settings_admins_menu"
+            )
+        ]
+    ]
+)
